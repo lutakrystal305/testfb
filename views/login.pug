@@ -1,0 +1,21 @@
+
+extends ./layouts/common
+block content
+		h1.ml-5 Login
+
+		if errors 
+			each error in errors
+				.alert.alert-danger= error
+
+		form(method= "POST")
+			.form-group.ml-5
+				label(for="email") Email:
+				input#email.form-control(name="email", type="text", value= values ? values.email : '')
+			.form-group.ml-5
+				label(for="password") Password:
+				input#password.form-control(name="password", type="password", value= values ? values.password : '')
+
+
+			button.btn.btn-primary.ml-5 Login
+			a(href="/auth/fb", target='_blank').btn.btn-primary.ml-1 Login with facebook
+		a(href="/auth/create").btn.btn-success.ml-5 Create a new User

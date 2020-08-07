@@ -1,0 +1,104 @@
+extends ./layouts/navbar-pr
+block content
+
+
+		div.top-profile
+			div.cover
+				img(src=user.cover).bg-cover
+				button#plus
+					i.fas.fa-plus.fa-spin
+				form(method= "POST", enctype="multipart/form-data")
+					.form-group.edit-cover
+						input#cover.form-control-file(name="cover", type="file")
+						button.btn.btn-success.btn-save Save
+
+
+			div.avt-profile-d
+				img(src=user.avatar, width= "200px").avt-profile
+				div.name-profile 
+					h1=user.name 
+						span
+							- var checkX = user.xname ? user.xname : '.....'
+							h6.pl-5#cc=`${checkX}`
+								button.ml-4 Edit
+
+				div.his
+					- var checkH = user.his ? user.his : '....'
+					p.pl-5=`${checkH}`
+						button.ml-4 Edit	
+		section.section-quote
+			form.quote
+				img.left-scene.l-s(src='/images/z5.png', alt='Left scene')
+				img.right-scene.r-s(src='/images/tree1.png', alt='Right scene')
+				h3 Profile
+				p You only live once!
+				.input-list.list-profile
+					div.contain-form
+						label(for="name") Your Name:
+						input.input.input1(type='text', name='name', value=user.name disabled)
+						button
+							i.fas.fa-user-edit
+					div.contain-form
+						- var checkDis= user.date ? 'disabled' : ''
+						- var checkDate= user.date ? user.date : 'Add your date of birth' 
+						label(for="date") Your date of birth:
+						input.input.input2(type='text', name='date', value=`${checkDate}` `${checkDis}`)
+						button
+							i.fas.fa-user-edit
+					div.contain-form
+						- var checkDis= user.address ? 'disabled' : ''
+						- var checkAdd= user.address ? user.address : 'Add your address'
+						label(for="address") Your address:
+						input.input.input3(type='text', name='address', value=`${checkAdd}` `${checkDis}`)
+						button
+							i.fas.fa-user-edit
+					div.contain-form
+						- var checkDis= user.uni ? 'disabled' : ''
+						- var checkUni= user.uni ? user.uni : 'Add your university'
+						label(for="uni") Your university:
+						input.input.input4(type='text', name='uni', value=`${checkUni}` `${checkDis}`)
+						button
+							i.fas.fa-user-edit
+					div.contain-form
+						label(for="email") Email:
+						input.input.input5(type='text', name='email', value=user.email disabled)
+					div.contain-form
+						label(for="phone") Phone:
+						input.input.input6(type='text', name='phone number', value=user.phone disabled)
+						button
+							i.fas.fa-user-edit
+					div.contain-form
+						- var checkDis= user.update ? 'disable' : ''
+						label(for="update") Created at:
+						input.input.input7(type='text', name='update', value=create disabled)
+				- var checkBtn= user.name&& user.date && user.address && user.uni && user.email && user.phone ? 'd-none' : ''
+				button(class=`btn-request ${checkBtn}` type='submit', name='button') Save
+			form.quote.quote-edit
+				img.left-scene.l-s(src='/images/z5.png', alt='Left scene')
+				img.right-scene.r-s(src='/images/tree1.png', alt='Right scene')
+				h3 Profile
+				p You only live once!
+				.input-list.list-profile
+					div.contain-form
+						label(for="name") Your Name:
+						input.input.input1(type='text', name='name', value=user.name )
+					div.contain-form
+						label(for="date") Your date of birth:
+						input.input.input2(type='text', name='date', value=user.date )
+					div.contain-form
+						label(for="address") Your address:
+						input.input.input3(type='text', name='address', value=user.address)
+					div.contain-form
+						label(for="uni") Your university:
+						input.input.input4(type='text', name='uni', value=user.uni)
+					div.contain-form
+						label(for="email") Email:
+						input.input.input5(type='text', name='email', value=user.email disabled)
+					div.contain-form
+						label(for="phone") Phone:
+						input.input.input6(type='text', name='phone number', value=user.phone)
+					div.contain-form
+						- var checkDis= user.update ? 'disable' : ''
+						label(for="update") Created at:
+						input.input.input7(type='text', name='update', value=create)
+				button.btn-request(type='submit', name='button') Save change

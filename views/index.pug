@@ -1,0 +1,101 @@
+
+extends ./layouts/common
+block content
+
+
+		img.bg(src='/images/hz305.png', alt='background')
+
+		section.main-title
+			h1
+				| Our customers
+				br
+				| &#x9;&#x9;&#x9;are very happy.
+			p
+				| See how, a lot of big company trust in us and use our services every month, we are Garden.
+			a.btn-request(href='javascript:void(0)') LOOK AT OUR WORKS
+		section.main-description
+			.description
+				h5 Who we are?
+				p
+					| We&apos;ll make the best for the garden of your company and you know why? Because this is what we prefer to do. Get a look at your company
+				div
+					a.link(href='javascript:void(0)')
+						| LEARN MORE
+			.description
+				h5 What we do?
+				p
+					| Your house is the best thing in the world, but with a not great garden your house will look not very nice, this is why we are here. You&apos;re interested?
+				div
+					a.link(href='javascript:void(0)') LEARN MORE
+		img.bar(src='/images/covid.png', alt= 'covid')
+		section.section-quote
+			form.quote
+				img.left-scene(src='/images/z5.png', alt='Left scene')
+				img.right-scene(src='/images/z4.png', alt='Right scene')
+				h3 Request a quote
+				p We will back to you very soon.
+				.type-user
+					label.type(for='company')
+						input#company(type='radio', name='type', checked='')
+						i
+						img(src='/images/building1.png', alt='Icon Building')
+						span I&apos;m a student
+					label.type(for='customer')
+						input#customer(type='radio', name='type')
+						i
+						img(src='/images/home1.jpg', alt='Icon Building')
+						span I&apos;m free
+				.input-list
+					input.input(type='text', name='name', placeholder='Name', required='')
+					input.input(type='text', name='date', placeholder='Date of birth', required='')
+					input.input(type='text', name='address', placeholder='Address', required='')
+					input.input(type='text', name='email', placeholder='Email', required='')
+					.select
+						select(name='region', required='')
+							option(value='', disabled='', selected='') Select gender
+							option(value='male') Male
+							option(value='famale') Female
+					input.input(type='text', name='phone number', placeholder='Phone number', required='')
+				.additional-choice
+					label.choice(for='phone')
+						input#phone(type='checkbox', name='phone', value='phone')
+						i.border
+						i.checkmark
+						img(src='/images/phone 1.png', alt='Phone')
+						span Phone
+					label.choice(for='email')
+						input#email(type='checkbox', name='email', value='email')
+						i.border
+						i.checkmark
+						img(src='/images/gmail-logo1.png', alt='Gmail')
+						span Email
+				.checkbox-list
+					label.checkbox(for='newsletters')
+						input#newsletters(type='checkbox', name='newsletters', value='newsletters')
+						i.checkmark
+						span.annexe I wanna receive Your&apos;s response
+				button.btn-request(type='submit', name='button') REQUEST A QUOTE
+		footer#footer
+			.footer-div
+				h1.title-logo Amber
+				.list-contact#contact
+					a(href='https://www.facebook.com/lutakrystal305/', target='_blank')
+						i.fab.fa-facebook
+						span Facebook
+					a(href='https://www.instagram.com/Lutakrystal/?fbclid=IwAR06U45xL97LvE171Y1VotccXnOaWzHvxqJfXETaGY97l5gT0WvatETUd1o', target='_blank')
+						i.fab.fa-instagram-square
+						span Instagram
+					a(href='https://www.youtube.com/channel/UCjddmzteQBzAvqOSXE9tHKA?view_as=subscriber', target='_blank')
+						i.fab.fa-youtube
+						span Youtube
+					a(href='javascript:void(0)')
+						i.fab.fa-twitter
+						span twitter
+					a(href='https://github.com/lutakrystal305', target='_blank')
+						i.fab.fa-github
+						span Github
+				.avt-x
+					img(src='./images/avt-x.jpg', style='width: 150px; height: 150px;')
+				.version
+					| &copy; 2020 Luta Krystal - All Rights Reserved.
+

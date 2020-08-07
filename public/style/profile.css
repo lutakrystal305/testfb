@@ -1,0 +1,108 @@
+.cover {
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	height: 400px;
+	padding: 0px 40px 0px 40px;
+}
+.bg-cover {
+	z-index: -5;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 30px;
+}
+.avt-profile {
+	position: relative;
+	top: -130px;
+	border-radius: 500px;
+	border: 1px solid #DDD;
+}
+.avt-profile-d {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.name-profile, .his {
+	position: relative;
+	top: -115px;
+}
+.top-profile {
+	background: rgb(238,238,245);
+	background: linear-gradient(360deg, rgba(238,238,245,1) 0%, rgba(220,232,237,1) 31%, rgba(204,230,236,1) 52%, rgba(128,204,189,1) 81%, rgba(117,235,227,1) 93%, rgba(92,237,246,1) 100%);
+	border-bottom: 1px solid #DDD;
+}
+.body-profile {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	overflow: hidden;
+}
+.cv h1{
+	padding-left: 60px;
+}
+.cv p {
+	padding-left: 30px;
+	color: #777;
+}
+.body-profile .creator {
+	padding-top: 50px;
+}
+.avt-author {
+	border: 1px solid #DDD;
+	position: relative;
+	top: 50px;
+}
+.cv {
+	position: relative;
+	padding: 65px;
+	border-bottom: 1px solid #DDD;
+	border-radius: 30px;
+}
+.cv .z1 {
+	padding-left: 130px;
+}
+.bg-color {
+	position: absolute;
+	top: 100px;
+
+}
+@media (max-width: 600px) {
+	.cover {
+		padding: 0px !important;
+		height: 200px;
+	}
+	.avt-profile {
+		width: 100px !important;
+		top: -70px;
+	}
+	.name-profile, .his {
+	top: -55px;
+	}
+	.avt-author {
+		width: 100px !important;
+		top: 0px;
+	}
+	.body-profile h1 {
+		font-size: 24px !important;
+	}
+	.bg-color {
+		width: 125%;
+		top: 90px;
+	}
+	.cv {
+		padding: 40px;
+	}
+	.cv h1 {
+		padding-left: 20px;
+	}
+	.cv p {
+		padding-left: 20px;
+	}
+	.cv .z1 {
+		padding-left: 40px;
+	}
+}

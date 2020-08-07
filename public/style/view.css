@@ -1,0 +1,65 @@
+.edit-cover {
+	position: relative;
+	top: -60px;
+	display: none;
+}
+#plus {
+	position: relative;
+	top: -30px;
+	background-color: transparent;
+	border: none;
+}
+.btn-save {
+	display: none;
+}
+.list-profile {
+	grid-template-columns: repeat(1, auto);
+
+}
+.input {
+	margin-left: 20px;
+	float: left;
+	width: 
+}
+.contain-form label {
+	float: left;
+	margin-top: 15px;
+	text-align: center;
+	vertical-align: middle;
+}
+.input1 {
+	width: 317px;
+}
+.input3 {
+	width: 300px;
+}
+.input4 {
+	width: 290px;
+}
+.input5 {
+	width: 353px;
+}
+.input6 {
+	width: 350px;
+}
+.input7 {
+	width: 320px;
+}
+.r-s {
+	right: -300px !important;
+}
+.quote-edit {
+	display: none;
+}
+.contain-form i {
+	
+}
+.contain-form button {
+	float: left;
+	margin-top: 15px;
+	text-align: center;
+	vertical-align: middle;
+	margin-left: 15px;
+	background-color: transparent;
+	border: none;
+}

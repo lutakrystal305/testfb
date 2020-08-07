@@ -1,0 +1,53 @@
+html
+	head
+		link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css")
+		link(rel="stylesheet", href="/style/custom.css")
+		link(rel="stylesheet", href="/style/profile.css")
+		link(rel="stylesheet", href="/style/quote.css")
+		link(rel="stylesheet", href="/style/footer.css")
+		link(rel="stylesheet", href="/style/view.css")
+		script(src='https://kit.fontawesome.com/aa1ae0086c.js', crossorigin='anonymous')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+		script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js', integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj', crossorigin='anonymous')
+		script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js', integrity='sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN', crossorigin='anonymous')
+		script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js', integrity='sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J', crossorigin='anonymous')
+
+		script(type='text/javascript', src='/jquery/avt.js')
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+	body
+		nav.navbar.navbar-expand-lg.navbar-light.bg-light
+			a.pl-2.pr-2.navbar-brand.title-logo(href='javascript:void(0)') Amber
+			button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+				span.navbar-toggler-icon
+			#navbarNav.collapse.navbar-collapse
+				ul.navbar-nav
+					li.nav-item.active
+						a.nav-link(href='/')
+							| Home 
+							span.sr-only (current)
+					li.nav-item
+						a.nav-link(href='javascript:void(0)') Users
+					li.nav-item
+						a.nav-link(href='/creator') About us
+					li.nav-item
+						a.nav-link(href='javascript:void(0)') Contact
+					li.nav-item.zx 
+						if user
+							a.nav-link(href='javascript:void(0)')
+								img(src=user.avatar, width="30")
+				a.nav-link.btn-request(href='javascript:void(0)') LOOK AT OUR WORKS
+			div.change
+				button(id='btn-change1').change1.radius-d
+			div.change
+				button(id='btn-change2').change2.radius-d
+
+			if user
+				div.zs#zs
+					a(href='/' +user._id)= user.name
+					img(src=user.avatar, width="30")
+
+
+		.containerz
+			block content

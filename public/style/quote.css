@@ -1,0 +1,320 @@
+
+@media only screen and (max-width: 1020px) {
+	.section-quote {
+		margin-top: 200px;
+	}
+}
+.bar {
+	padding-left: 540px;
+	margin: 50px 0px 30px 0px;
+	height: 230px;
+}
+.section-quote {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 89px 0px;
+	display: block;
+}
+.quote {
+	position: relative;
+	background-color: #fff;
+	width: 630px;
+	box-shadow: 0px 2px 6px rgba(0, 0, 0, .15);
+	border-top: 1px solid #eee;
+	border-radius: 16px;
+	margin: auto;
+	padding: 32px;
+	text-align: center;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.left-scene {
+	position: absolute;
+	bottom: -35px;
+	left: -330px;
+}
+.right-scene {
+	position: absolute;
+	box-shadow: 0px;
+	right: -350px;
+}
+
+h3 {
+	font-size: 1.5em;
+	font-weight: 500;
+	margin: 0px;
+	display:block;
+}
+.quote p {
+	display: block;
+}
+.type-user {
+	display: grid;
+	box-shadow: 0px 1px 6px rgba(0, 0, 0, .15);
+	border-radius: 8px;
+	grid-template-columns: repeat(2, auto);
+	grid-column-gap: 24px;
+	width: 52%;
+	margin:  0px auto 24px auto;
+	padding: 0px 18px;
+}
+.type {
+	width: auto;
+	position: relative;
+	font-size: 0.875em;
+	font-weight: 500;
+	color: #848D86;
+	display: inline-flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	align-items: center;
+	padding: 13px 0px;
+	cursor: pointer;
+}
+.type input {
+	display: none;
+}
+input[radio] {
+	margin: 3px 3px 0px 5px;
+	box-sizing: border-box;
+	background-color: initial;
+	cursor: default;
+	padding: initial;
+	border: initial;
+}
+.type input:checked +i {
+	left: 0%;
+	width: 100%;
+}
+.type i {
+	position: absolute;
+	height: 2px;
+	bottom: 0px;
+	border-radius:  50px 50px 0px 0px;
+	background-color: #438E56;
+}
+i {
+	font-style: italic;
+}
+.type img {
+	margin: 0px 6px 0px 0px;
+}
+.type input:checked + i + img +span {
+	color: #438E56;
+}
+.input-list {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	grid-row-gap: 16px;
+	grid-column-gap: 16px;
+	margin: 0px 0px 24px 0px;
+}
+.input {
+	border: solid 1px #DBE1DD;
+	border-radius: 8px;
+	padding: 16px 12px;
+	font-size: 0.875em;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+	width: 275px;
+}
+.select {
+	display: inline-block;
+	width: 275px;
+	height: 53px;
+	border: solid 1px #DBE1DD;
+	border-radius: 8px;
+	overflow: hidden;
+	position: relative;
+	background: url("https://paliros.fr/garden/img/icon-select.svg") 96% / 4% no-repeat;
+}
+.select select {
+	left: 0;
+	top: 0;
+	position: absolute;
+	font-family: Arial, sans-serif;
+	background: transparent;
+	width: 305px;
+	font-size: 16px;
+	border: 0px;
+	height: 53px;
+	padding: 16px 12px;
+}
+select:not {
+	overflow: visible !important;
+}
+select {
+	border-radius: 0px;
+	box-sizing: border-box;
+	align-items: center;
+	white-space: pre;
+	color: black;
+	cursor: default;
+}
+select {
+	text-rendering: auto;
+	letter-spacing: normal;
+	word-spacing:  normal;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+	display: inline-block;
+	text-align: start;
+	margin: 0em;
+	font: 400 13.3333px Arial;
+}
+option:dis {
+	color: graytext;
+}
+option {
+	font-weight: normal;
+	display: block;
+	white-space: pre;
+	min-height: 1.2em;
+	padding: 0px 2px 1px;
+}
+.additional-choice {
+	display: inline-grid;
+	grid-template-columns: repeat(2, auto);
+	grid-column-gap: 16px;
+	margin: 0px 0px 24px 0px;
+}
+.choice {
+	position: relative;
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+	border: solid 1px #DBE1DD;
+	border-radius: 8px;
+	width: 143px;
+	height: 106px;
+	font-weight: 500;
+	font-size: 0.75em;
+	color: #848D86;
+	cursor: pointer;
+}
+.choice input {
+	display: none;
+}
+input[checkbox] {
+	margin: 3px 3px 3px 4px;
+	box-sizing: border-box;
+	background-color: initial;
+	cursor: default;
+	padding: initial;
+	border: initial;
+}
+.choice .border {
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	width: 100%;
+	height: 100%;
+	border: solid 1px #86CF64;
+	border-radius: 8px;
+	opacity: 0;
+}
+.choice .checkmark {
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	border-radius: 50px;
+	background-color: #86CF64;
+	background-image: url('https://paliros.fr/garden/img/icon-markup.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	top: 6px;
+	right: 6px;
+	opacity: 0;
+}
+.choice img {
+	margin: 0px 0px 12px 0px;
+}
+.choice input:checked ~ .checkmark {
+	opacity: 1;
+}
+.choice input:checked ~ .border {
+	opacity: 1;
+}
+.checkbox-list {
+	width: 100%;
+	display: grid;
+	grid-row-gap: 4px;
+	text-align: left;
+	margin: 0px 0px 24px 0px;
+}
+.checkbox {
+	position: relative;
+	display: block;
+	padding: 0px 0px 0px 20px;
+}
+label {
+	cursor: default;
+}
+.checkbox input {
+	display: none;
+}
+.quote .annexe {
+	font-size: 0.75em;
+	font-weight: 400;
+	margin: 0px 0px 24px 0px;
+	color: #848D86;
+}
+.checkbox .checkmark {
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	box-sizing: border-box;
+	border-radius: 4px;
+	border: solid 1px #DBE1DD;
+	left: 0px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+.checkbox input:checked ~ .checkmark {
+	border-color: #86CF64;
+	background-color: #86CF64;
+	background-image: url('https://paliros.fr/garden/img/icon-markup.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.quote .btn-request {
+	width: 100%;
+	font-family: Arial, sans-serif;
+	box-sizing: border-box;
+}
+@media (max-width: 600px) {
+	.bar {
+		padding-left: 70px !important;
+		margin: 30px 0px 30px 0px;
+		height: 160px;
+	}
+	.left-scene, .right-scene {
+		display: none;
+	}
+	.quote {
+		width: 300px;
+	}
+	.type-user {
+		width: 80%;
+	}
+	.type {
+		width: 70px;
+		right: 15px;
+	}
+	.input-list {
+		grid-template-columns: repeat(1, auto);
+	}
+	.input-list .input, .select {
+		width: 260px;
+	}
+	.choice {
+		width: 100px;
+	}
+}
