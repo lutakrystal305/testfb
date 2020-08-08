@@ -12,11 +12,19 @@ router.get('/login', controller1.login);
 router.post('/login', controller1.postLogin);
 
 router.get('/fb', passport.authenticate('facebook', {scope: ['email']}));
-router.get('/fb/cb', passport.authenticate('facebook', {
+router.get('/fb/cb', passport.authenticate('facebook', (req, res, next) => {
+	let token= jwt.sign({ userId: user._id}, "shhhhh");
+		 res.cookie('token', token, { // store it in an https only cookie
+        	signed: true // set to true if your using https
+    	});
+		next();
+},
+ {
 	failureRedirect: '/auth/login',
 	successRedirect: '/'
 })
 );
+router.get('')
 router.get('/create', controller2.create);
 router.post('/create', 
 	upload.single('avatar'), 
