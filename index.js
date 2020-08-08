@@ -69,7 +69,7 @@ app.listen(port, () => {
 passport.use(new passportFB({
 	clientID: '321273062334733',
 	clientSecret: '389cb897ebe0505ea20dc36510fa0b05',
-	callbackURL: 'http://amber-social.herokuapp.com/auth/fb/cb',
+	callbackURL: 'https://amber-social.herokuapp.com/auth/fb/cb',
 	profileFields: ['email', 'gender', 'locale', 'displayName']
 },
 (accessToken, refreshToken, profile, done) => {
