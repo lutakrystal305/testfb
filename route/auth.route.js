@@ -5,6 +5,7 @@ const passport = require('passport');
 const passportFB= require('passport-facebook').Strategy;
 var controller1= require('../controller/auth.controller');
 var controller2= require('../controller/create.controller');
+var jwt= require('jsonwebtoken');
 
 var upload = multer({ dest: './public/uploads/' });
 
