@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app= express();
+var jwt= require('jsonwebtoken');
 
 var mongoose= require('mongoose');
 const passport = require('passport');
@@ -68,7 +69,8 @@ app.listen(port, () => {
 passport.use(new passportFB({
 	clientID: '321273062334733',
 	clientSecret: '389cb897ebe0505ea20dc36510fa0b05',
-	callbackURL: 'http://localhost:3000/auth/fb/cb'
+	callbackURL: 'http://amber-social.herokuapp.com/auth/fb/cb',
+	profileFields: ['email', 'gender', 'locale', 'displayName']
 },
 (accessToken, refreshToken, profile, done) => {
 	console.log(profile);
@@ -82,6 +84,11 @@ passport.use(new passportFB({
 			email: profile._json.email
 		})
 		newUser.save();
+		let token= jwt.sign({ userId: newUser._id}, "shhhhh");
+		 res.cookie('token', token, { // store it in an https only cookie
+        	secure: true, // set to true if your using https
+        	httpOnly: true
+    	});
 	})
 }
 ));

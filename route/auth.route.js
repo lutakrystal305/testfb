@@ -13,7 +13,7 @@ router.post('/login', controller1.postLogin);
 
 router.get('/fb', passport.authenticate('facebook', {scope: ['email']}));
 router.get('/fb/cb', passport.authenticate('facebook', {
-	failureRedirect: '/',
+	failureRedirect: '/auth/login',
 	successRedirect: '/'
 })
 );
