@@ -20,7 +20,7 @@ router.get('/fb/cb', passport.authenticate('facebook',
         	signed: true // set to true if your using https
     	});
 		res.redirect('/');
-});
+}));
 router.get('')
 router.get('/create', controller2.create);
 router.post('/create', 
