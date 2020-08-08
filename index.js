@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app= express();
 
@@ -7,20 +8,24 @@ const passportFB= require('passport-facebook').Strategy;
 const cookieParser = require('cookie-parser');
 const session= require('express-session');
 
+
 const User= require('./models/user.model');
+const pass= process.env.PASSWORD2;
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb://localhost:27017/passport");
+mongoose.connect(`mongodb+srv://vanthai:${pass}@cluster0.rh1oc.mongodb.net/Management`)
 
-var bodyParser= require('body-parser');
+const bodyParser= require('body-parser');
 
-var authRoute= require('./route/auth.route');
-var userRoute= require('./route/user.route');
+const authRoute= require('./route/auth.route');
+const userRoute= require('./route/user.route');
 
-var authMiddleware= require('./middleware/auth.middleware');
+const authMiddleware= require('./middleware/auth.middleware');
+
+const quoteController= require('./controller/index.controller');
 
 
 
@@ -28,6 +33,7 @@ app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+const port= process.env.PORT || 3000;
 
 app.set('views', './views');
 app.set('view engine', 'pug');
@@ -45,17 +51,18 @@ app.use(passport.session());
 app.get('/', authMiddleware.requireAuth, (req, res) => {
 	res.render('index');
 })
+app.post('/', quoteController.indexQuote);
 app.get('/creator', authMiddleware.requireAuth, (req, res) => {
 	res.render('me');
 })
 app.use('/auth', authRoute);
-app.use('/', authMiddleware.requireAuth, userRoute);
+app.use('/user', authMiddleware.requireAuth, userRoute);
 
 
 
 
-app.listen(3000, () => {
-	console.log('example start on port 3000');
+app.listen(port, () => {
+	console.log('example start on port '+ port);
 })
 
 passport.use(new passportFB({

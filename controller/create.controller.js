@@ -2,7 +2,14 @@ var md5= require('md5');
 
 var User = require('../models/user.model');
 
-
+var nodemailer = require('nodemailer');
+var transporter =  nodemailer.createTransport({ // config mail server
+        service: 'gmail',
+        auth: {
+            user: 'lutakrystal305@gmail.com',
+            pass: `${process.env.PASSWORD1}`
+        }
+    });
 module.exports.create= (req, res) => {
 	res.render('create');
 };
@@ -77,11 +84,26 @@ module.exports.postCreate=async (req, res, next) => {
 			return;
 		}
 		else {
+		var passwordX= req.body.password;
 		req.body.password = md5(req.body.password);
 
 			var user=await new User(req.body);
 			user.save();
-
+		
+		var mainOptions = { // thiết lập đối tượng, nội dung gửi mail
+        from: 'Luta Krystal',
+        to: req.body.email,
+        subject: 'Welcome to Amber!',
+        text: 'You recieved Message from Amber',
+        html: '<h1>Hi new member</h1><ul><li>Username:' + req.body.name + '</li><li>Email:' + req.body.email + '</li><li>Password:' + passwordX + '</li></ul>'
+    }
+    transporter.sendMail(mainOptions, function(err, info){
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('Message sent: ' +  info.response);
+        }
+    });
 		res.redirect('/');
 		}
 	} catch (error) {

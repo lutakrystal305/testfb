@@ -1,5 +1,6 @@
 html
 	head
+		title Amber
 		link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css")
 		link(rel="stylesheet", href="/style/custom.css")
 		link(rel="stylesheet", href="/style/home.css")
@@ -17,7 +18,9 @@ html
 
 	body
 		nav.navbar.navbar-expand-lg.navbar-light.bg-light
-			a.pl-2.pr-2.navbar-brand.title-logo(href='javascript:void(0)') Amber
+			a.pl-2.pr-2.navbar-brand.title-logo(href='javascript:void(0)')
+				i.fas.fa-moon
+				|  Amber
 			button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
 				span.navbar-toggler-icon
 			#navbarNav.collapse.navbar-collapse
@@ -41,11 +44,13 @@ html
 				button(id='btn-change1').change1.radius-d
 			div.change
 				button(id='btn-change2').change2.radius-d
+			div.change
+				button(id='btn-change3').change3.radius-d
 			
 
 			if user
 				div.zs#zs
-					a(href='/' +user._id)= user.name
+					a(href='/user/' +user._id)= user.name
 					img(src=user.avatar, width="30")
 
 

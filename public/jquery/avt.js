@@ -5,4 +5,7 @@ $(document).ready(function(){
    $("#btn-change2").click(function(){
     $("#zs").toggleClass("change2");
   });
+   $("#btn-change3").click(function(){
+    $("#zs").toggleClass("change3");
+  });
  });

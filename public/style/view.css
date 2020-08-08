@@ -1,16 +1,32 @@
-.edit-cover {
+.edit-cover, .edit-avatar {
 	position: relative;
 	top: -60px;
 	display: none;
 }
-#plus {
+#plus1 {
 	position: relative;
 	top: -30px;
 	background-color: transparent;
 	border: none;
 }
+#plus2 {
+	position: relative;
+	top: -150px;
+	background-color: transparent;
+	border: none;
+}
 .btn-save {
+	background-color: transparent;
+	border: none;
+}
+#edit1, #edit2 {
+	background-color: transparent;
+	border: none;
+}
+.x1, .x2 {
+	float: left;
 	display: none;
+	grid-template-columns: repeat(2, auto);
 }
 .list-profile {
 	grid-template-columns: repeat(1, auto);
@@ -48,13 +64,10 @@
 .r-s {
 	right: -300px !important;
 }
-.quote-edit {
+#quote-edit {
 	display: none;
 }
-.contain-form i {
-	
-}
-.contain-form button {
+.contain-form a {
 	float: left;
 	margin-top: 15px;
 	text-align: center;
@@ -62,4 +75,9 @@
 	margin-left: 15px;
 	background-color: transparent;
 	border: none;
+}
+@media (max-width: 600px) {
+	#plus2 {
+		top: -50px;
+	}
 }

@@ -29,7 +29,7 @@ block content
 					a.link(href='javascript:void(0)') LEARN MORE
 		img.bar(src='/images/covid.png', alt= 'covid')
 		section.section-quote
-			form.quote
+			form.quote(action="/", method= "POST")
 				img.left-scene(src='/images/z5.png', alt='Left scene')
 				img.right-scene(src='/images/z4.png', alt='Right scene')
 				h3 Request a quote
@@ -77,7 +77,9 @@ block content
 				button.btn-request(type='submit', name='button') REQUEST A QUOTE
 		footer#footer
 			.footer-div
-				h1.title-logo Amber
+				h1.title-logo
+					i.fas.fa-moon
+					|  Amber
 				.list-contact#contact
 					a(href='https://www.facebook.com/lutakrystal305/', target='_blank')
 						i.fab.fa-facebook
