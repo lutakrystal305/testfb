@@ -84,10 +84,6 @@ passport.use(new passportFB({
 			email: profile._json.email
 		})
 		newUser.save();
-		let token= jwt.sign({ userId: newUser._id}, "shhhhh");
-		 res.cookie('token', token, { // store it in an https only cookie
-        	signed: true, // set to true if your using https
-    	});
 	})
 }
 ));
