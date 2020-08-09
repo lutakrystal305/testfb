@@ -46,7 +46,7 @@ module.exports.postLogin= async function(req, res, next) {
 		}
 		let token= jwt.sign({ userId: user._id}, "shhhhh");
 		 res.cookie('token', token, { // store it in an https only cookie
-        	secure: false,
+        	secure: true,
         	httpOnly: true // set to true if your using https
     	});
 		res.redirect('/');

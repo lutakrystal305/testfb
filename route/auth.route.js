@@ -22,7 +22,6 @@ router.get('/fb/cb', passport.authenticate('facebook',  {
         	secure: true,
         	httpOnly: true // set to true if your using https
     	});
-		console.log(token);
 		res.redirect('/');
 	}
 )

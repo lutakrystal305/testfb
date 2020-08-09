@@ -32,11 +32,10 @@ module.exports.updateAvatar = async function(req, res, next) {
 	try {
 		var id= req.params.id;
 		console.log(req.file.path)
-		req.body.avatar = req.file.path.split('\\').slice(1).join('/');
+		req.body.avatar = req.file.path.split('/').slice(1).join('/');
 		let user= await User.findOneAndUpdate({_id:id}, {$set : {
 			avatar: req.body.avatar
 		}})
-		console.log(user);
 		res.redirect(`/user/${id}`)
 	} catch(error) {
 		next(error);
@@ -92,7 +91,6 @@ module.exports.updateInit= async function(req, res, next) {
 			address: req.body.address,
 			uni: req.body.uni
 		}});
-		console.log(user);
 		res.redirect(`/user/${id}`);
 	} catch(error) {
 		next(error);
@@ -155,7 +153,6 @@ module.exports.updateProfile= async function(req, res, next) {
 			uni: req.body.nuni,
 			phone: req.body.nphone
 		}});
-		console.log(user)
 		res.redirect(`/user/${id}`);
 	} catch(error) {
 		next(error);
