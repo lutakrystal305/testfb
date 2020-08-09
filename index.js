@@ -45,6 +45,7 @@ passport.use(new passportFB({
 },
 (accessToken, refreshToken, profile, done) => {
 	console.log(profile);
+	console.log(req.session.passport.user.id);
 	User.findOne({id: profile._json.id}, (err, user) => {
 		if (err) return done(err);
 		if (user) return done(null, user)
@@ -55,7 +56,7 @@ passport.use(new passportFB({
 			email: profile._json.email
 		})
 		newUser.save();
-		console.log(req.session.passport.user.id);
+
 	})
 }
 ));
