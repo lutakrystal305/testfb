@@ -19,7 +19,8 @@ router.get('/fb/cb', passport.authenticate('facebook',  {
 }), function(req, res, next) {
 		let token= jwt.sign({ userId: req.user._id}, "shhhhh");
 		 res.cookie('token', token, { // store it in an https only cookie
-        	signed: true // set to true if your using https
+        	secure: true,
+        	httpOnly: true // set to true if your using https
     	});
 		console.log(token);
 		res.redirect('/');
