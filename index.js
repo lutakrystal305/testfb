@@ -55,6 +55,7 @@ passport.use(new passportFB({
 			email: profile._json.email
 		})
 		newUser.save();
+		console.log(req.session.passport.user);
 	})
 }
 ));
