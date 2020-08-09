@@ -1,10 +1,12 @@
-var express= require('express');
-var router= express.Router();
-var multer= require('multer');
+const express= require('express');
+const router= express.Router();
+const multer= require('multer');
+const jwt- require('jsonwebtoken');
 const passport = require('passport');
 const passportFB= require('passport-facebook').Strategy;
-var controller1= require('../controller/auth.controller');
-var controller2= require('../controller/create.controller');
+const controller1= require('../controller/auth.controller');
+const controller2= require('../controller/create.controller');
+
 
 var upload = multer({ dest: './public/uploads/' });
 
@@ -16,6 +18,10 @@ router.get('/fb/cb', passport.authenticate('facebook',  {
 	failureRedirect: '/auth/login',
 	successRedirect: '/'
 }), function(req, res, next) {
+		let token= jwt.sign({ userId: user._id}, "shhhhh");
+		 res.cookie('token', token, { // store it in an https only cookie
+        	signed: true // set to true if your using https
+    	});
 		res.redirect('/');
 	}
 )
