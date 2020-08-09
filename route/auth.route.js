@@ -15,12 +15,10 @@ router.get('/fb', passport.authenticate('facebook', {scope: ['email']}));
 router.get('/fb/cb', passport.authenticate('facebook',  {
 	failureRedirect: '/auth/login',
 	successRedirect: '/'
-},
-	function(req, res, next) {
+}), function(req, res, next) {
 		res.redirect('/');
 	}
 )
-);
 router.get('')
 router.get('/create', controller2.create);
 router.post('/create', 
