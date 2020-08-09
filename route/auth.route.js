@@ -1,7 +1,7 @@
 const express= require('express');
 const router= express.Router();
 const multer= require('multer');
-const jwt- require('jsonwebtoken');
+const jwt= require('jsonwebtoken');
 const passport = require('passport');
 const passportFB= require('passport-facebook').Strategy;
 const controller1= require('../controller/auth.controller');
