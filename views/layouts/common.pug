@@ -37,8 +37,9 @@ html
 						a.nav-link(href='javascript:void(0)') Contact
 					li.nav-item.zx 
 						if user
-							a.nav-link(href='javascript:void(0)')
-								img(src=user.avatar, width="30")
+							a.nav-link(href='/user/' +user._id)
+								- var checkA= user.avatar? user.avatar : '/images/killer.png'
+								img(src=`${checkA}`, width="30")
 				a.nav-link.btn-request(href='javascript:void(0)') LOOK AT OUR WORKS
 			div.change
 				button(id='btn-change1').change1.radius-d
