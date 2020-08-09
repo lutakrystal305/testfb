@@ -15,8 +15,7 @@ router.post('/login', controller1.postLogin);
 
 router.get('/fb', passport.authenticate('facebook', {scope: ['email']}));
 router.get('/fb/cb', passport.authenticate('facebook',  {
-	failureRedirect: '/auth/login',
-	successRedirect: '/'
+	failureRedirect: '/auth/login'
 }), function(req, res, next) {
 		let token= jwt.sign({ userId: user._id}, "shhhhh");
 		 res.cookie('token', token, { // store it in an https only cookie

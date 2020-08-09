@@ -3,6 +3,7 @@ var jwt= require('jsonwebtoken')
 
 var user;
 module.exports.requireAuth= function(req, res, next) {
+	console.log(req.cookies.token);
 	var token= req.cookies.token;
 	if (!token) {
 		res.redirect('/auth/login');
