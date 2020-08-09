@@ -17,7 +17,7 @@ router.get('/fb', passport.authenticate('facebook', {scope: ['email']}));
 router.get('/fb/cb', passport.authenticate('facebook',  {
 	failureRedirect: '/auth/login'
 }), function(req, res, next) {
-		let token= jwt.sign({ userId: user._id}, "shhhhh");
+		var token= jwt.sign({ userId: newUser._id}, "shhhhh");
 		 res.cookie('token', token, { // store it in an https only cookie
         	signed: true // set to true if your using https
     	});
