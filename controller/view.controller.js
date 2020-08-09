@@ -18,7 +18,7 @@ module.exports.updateCover = async function(req, res, next) {
 	try {
 		var id= req.params.id;
 		console.log(req.file.path)
-		req.body.cover = req.file.path.split('\\').slice(1).join('/');
+		req.body.cover = req.file.path.split('/').slice(1).join('/');
 		let user= await User.findOneAndUpdate({_id:id}, {$set : {
 			cover: req.body.cover
 		}})
