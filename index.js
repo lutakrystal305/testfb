@@ -64,9 +64,9 @@ passport.use(new passportFB({
 
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser('shhhhh'));
+app.use(cookieParser());
 
-const port= process.env.PORT || 3000;
+const port= process.env.PORT || 3020;
 
 app.set('views', './views');
 app.set('view engine', 'pug');

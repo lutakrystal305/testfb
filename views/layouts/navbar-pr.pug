@@ -51,7 +51,8 @@ html
 			if user
 				div.zs#zs
 					a(href='/user/' +user._id)= user.name
-					img(src=user.avatar, width="30")
+					- var checkA= user.avatar? user.avatar : '/images/killer.png'
+					img(src=`${checkA}`, width="30")
 
 
 		.containerz

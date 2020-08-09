@@ -4,7 +4,8 @@ block content
 
 		div.top-profile
 			div.cover
-				img(src=`/${user.cover}`).bg-cover
+				- var checkC = user.cover ? `/${user.cover}` : '/images/autumn.jpg'
+				img(src=`${checkC}`).bg-cover
 				button#plus1
 					i.fas.fa-plus.fa-spin
 				form(action=`/user/${user._id}/cover`, method= "POST", enctype="multipart/form-data")
