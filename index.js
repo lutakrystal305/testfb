@@ -30,7 +30,7 @@ const quoteController= require('./controller/index.controller');
 
 
 passport.serializeUser((user, done) => {
-	done(null, user.id)
+	done(null, user)
 });
 passport.deserializeUser( async (id, done) => {
 	await User.findOne({id}, (err, user) => {

@@ -17,6 +17,7 @@ router.get('/fb', passport.authenticate('facebook', {scope: ['email']}));
 router.get('/fb/cb', passport.authenticate('facebook',  {
 	failureRedirect: '/auth/login'
 }), function(req, res, next) {
+		console.log(req.user);
 		res.redirect('/');
 	}
 )
