@@ -29,6 +29,37 @@ const authMiddleware= require('./middleware/auth.middleware');
 const quoteController= require('./controller/index.controller');
 
 
+passport.serializeUser((user, done) => {
+	done(null, user.id)
+});
+passport.deserializeUser( async (id, done) => {
+	await User.findOne({id}, (err, user) => {
+		done(null, user);
+	})
+})
+passport.use(new passportFB({
+	clientID: '321273062334733',
+	clientSecret: '389cb897ebe0505ea20dc36510fa0b05',
+	callbackURL: 'https://amber-social.herokuapp.com/auth/fb/cb',
+	profileFields: ['email', 'gender', 'locale', 'displayName']
+},
+(accessToken, refreshToken, profile, done) => {
+	console.log(profile);
+	User.findOne({id: profile._json.id}, (err, user) => {
+		if (err) return done(err);
+		if (user) return done(null, user)
+
+		const newUser= new User({
+			id: profile._json.id,
+			name: profile._json.name,
+			email: profile._json.email
+		})
+		newUser.save();
+	})
+}
+));
+
+
 
 app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -66,32 +97,3 @@ app.listen(port, () => {
 	console.log('example start on port '+ port);
 })
 
-passport.use(new passportFB({
-	clientID: '321273062334733',
-	clientSecret: '389cb897ebe0505ea20dc36510fa0b05',
-	callbackURL: 'https://amber-social.herokuapp.com/auth/fb/cb',
-	profileFields: ['email', 'gender', 'locale', 'displayName']
-},
-(accessToken, refreshToken, profile, done) => {
-	console.log(profile);
-	User.findOne({id: profile._json.id}, (err, user) => {
-		if (err) return done(err);
-		if (user) return done(null, user)
-
-		const newUser= new User({
-			id: profile._json.id,
-			name: profile._json.name,
-			email: profile._json.email
-		})
-		newUser.save();
-	})
-}
-));
-passport.serializeUser((user, done) => {
-	done(null, user.id)
-});
-passport.deserializeUser( async (id, done) => {
-	await User.findOne({id}, (err, user) => {
-		done(null, user);
-	})
-})
