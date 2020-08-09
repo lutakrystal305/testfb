@@ -16,7 +16,8 @@ block content
 
 
 			div.avt-profile-d
-				img(src=`/${user.avatar}`, width= "200px").avt-profile
+				- var checkAv= user.avatar? `/${user.avatar}` : '/images/killer.png'
+				img(src=`${checkAv}`, width= "200px").avt-profile
 				button#plus2
 					i.fas.fa-plus.fa-spin
 				form(action=`/user/${user._id}/avatar`, method= "POST", enctype="multipart/form-data")
